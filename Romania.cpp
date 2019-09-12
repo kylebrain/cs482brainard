@@ -171,6 +171,8 @@ int main(int argc, char** argv)
     return 0;
 }
 
+// Searches from start to end using breadth first search
+// Returns false if it cannot find a path
 bool bfs(int start, int end)
 {
     int visited[vertexCount];
@@ -211,6 +213,8 @@ bool bfs(int start, int end)
     return false;
 }
 
+// Searches from start to end using depth first search
+// Returns false if it cannot find a path
 bool dfs(int start, int end)
 {
     bool visited[vertexCount];
@@ -250,6 +254,9 @@ bool dfs(int start, int end)
     return false;
 }
 
+
+// Searches from start to end using iteratively deepening search
+// Returns false if it cannot find a path
 bool ids(int start, int end)
 {
     for(int i = 0; i < vertexCount; i++)
@@ -263,6 +270,8 @@ bool ids(int start, int end)
     return false;
 }
 
+// Searches from start to end using recursive depth first search
+// Returns false if a path cannot be found before the limit is reached
 bool recursive_dfs(int start, int end, int limit)
 {
     LogVertex(start);
