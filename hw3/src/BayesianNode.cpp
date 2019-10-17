@@ -13,6 +13,46 @@ BayesianNode::BayesianNode(char _node, vector<BayesianNode *> _parents, vector<f
     {
         throw std::runtime_error("Cdf size must be 2^(size of parents)");
     }
+
+    std::cout << "P(" << std::string(1, node) << ")";
+
+    if(cdf.size() > 1)
+    {
+        std::cout << std::endl;
+    }
+
+    for(int i = parents.size() - 1; i >= 0 ; i--)
+    {
+        std::cout << std::string(1, parents[i]->node);
+        if(i > 0)
+        {
+            std::cout << "|";
+        }
+    }
+
+    if(cdf.size() > 1)
+    {
+        std::cout << std::endl;
+    }
+
+    for(unsigned int i = 0; i < cdf.size(); i++)
+    {
+        std::string bin;
+        for(int j = parents.size() - 1; j >= 0; j--)
+        {
+            if((i >> j) & 1)
+            {
+                bin += "1";
+            } else
+            {
+                bin += "0";
+            }
+        }
+
+        std::cout << bin << ": " << cdf[i] << std::endl;
+    }
+
+    std::cout << std::endl;
 }
 
 float BayesianNode::getConditionalProb(vector<bool> truth)

@@ -18,7 +18,6 @@ int main(void)
     BayesianNode * d = new BayesianNode('D', {a}, {0.2, 0.5});
     nodes.push_back(d);
 
-    std::cout << "p(A | B = 0, C = 1) = " << a->getConditionalProb({true, false}) << std::endl;
     std::cout << "P(A|B)" << std::endl << "----------" << std::endl;
     std::cout << a->getProb(true, {b}, {true}) << std::endl << std::endl;
     std::cout << "P(A)" << std::endl << "----------" << std::endl;
