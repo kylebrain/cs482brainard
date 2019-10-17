@@ -28,7 +28,7 @@ BayesianNode * a = new BayesianNode('A', {c, b}, {0.01, 0.5, 0.9, 0.99});
 ## Making querys
 To make querys call getProb()\
 getProb() takes in the value of the object and the given values\
-Given values are given as a list of given nodes and a list of indice matched truth values for those given nodes\
+Given values are given as a list of given nodes and a list of indice matched truth values for those given nodes
 
 For example\
 P(A|B)
@@ -38,8 +38,8 @@ a->getProb(true, {b}, {true});
 ```
 
 ## Limitations
-For any query the there can only be one node to get the probability of\
+For any query the there can only be one node to get the probability\
 For example, you cannot get P(A, B | C)
 
 Furthermore, when making a query in which the given node is a child of the query node, there can only be one given\
-For example, you cannot get P(B | A, D)
+For example, you cannot get P(B | A, D) with the provided network
