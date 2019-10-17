@@ -7,10 +7,10 @@ make
 ## Creating the network
 To create a node initialize it with the parents and the conditional probabilities in a binary table\
 Parents are inputted first with the lowest order bit\
-The indices of conditional probabilities correspond with the truth values of the parents\
+The indices of conditional probabilities correspond with the truth values of the parents
 
-For example\
-|    | P(A) |
+For example
+| Index | P(A) |
 |----|------|
 | 00 | 0.01 |
 | 01 | 0.5  |
@@ -18,7 +18,7 @@ For example\
 | 11 | 0.99 |
 
 B is the higher order bit\
-C is the lower order bit\
+C is the lower order bit
 
 ```c++
 BayesianNode * a = new BayesianNode('A', {c, b}, {0.01, 0.5, 0.9, 0.99});
@@ -38,7 +38,7 @@ a->getProb(true, {b}, {true});
 
 ## Limitations
 For any query the there can only be one node to get the probability of\
-For example, you cannot get P(A, B | C)\
+For example, you cannot get P(A, B | C)
 
 Furthermore, when making a query in which the given node is a child of the query node, there can only be one given\
 For example, you cannot get P(B | A, D)
