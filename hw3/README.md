@@ -10,6 +10,7 @@ Parents are inputted first with the lowest order bit\
 The indices of conditional probabilities correspond with the truth values of the parents
 
 For example
+
 | Index | P(A) |
 |----|------|
 | 00 | 0.01 |
