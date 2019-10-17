@@ -9,6 +9,7 @@ using std::vector;
 int main(void)
 {
     vector<BayesianNode *> nodes;
+    std::cout << "CONDITIONAL DENSITIES" << std::endl << "----------" << std::endl << std::endl;
     BayesianNode * b = new BayesianNode('B', {}, {0.01});
     nodes.push_back(b);
     BayesianNode * c = new BayesianNode('C', {}, {0.001});
@@ -18,6 +19,7 @@ int main(void)
     BayesianNode * d = new BayesianNode('D', {a}, {0.2, 0.5});
     nodes.push_back(d);
 
+    std::cout << "QUERIES" << std::endl << "----------" << std::endl << std::endl;
     std::cout << "P(A|B)" << std::endl << "----------" << std::endl;
     std::cout << a->getProb(true, {b}, {true}) << std::endl << std::endl;
     std::cout << "P(A)" << std::endl << "----------" << std::endl;
